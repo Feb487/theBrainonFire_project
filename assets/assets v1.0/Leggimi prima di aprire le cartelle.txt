@@ -1,0 +1,2 @@
+Ho fatto la maggior parte delle cose che servivano come tutti i layer del terreno, varie icone e caricamenti, alcuni effetti, i vari bottoni ecc.
+Mancano i layer con gli alberi che devo ancora trovare, manca un timer animato nello stesso stile delle altre icone che sia animato e mancano le vari immagini contenenti i menù.
