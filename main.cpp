@@ -3,7 +3,6 @@
 #include <SDL2/SDL_mixer.h>
 #include <SDL2/SDL_ttf.h>
 #include "header/Game.h"
-#include <iostream>
 
 Game *game = nullptr;
 
@@ -24,7 +23,7 @@ int main (int argc,char *argv[]){
 
     game->handleEvents();
     game->update();
-    game->render();
+    game->draw();
 
     frameTime = SDL_GetTicks() - frameStart;
     if (frameDelay > frameTime){

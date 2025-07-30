@@ -20,34 +20,45 @@ Button::Button(int x, int y,const char* texDefault, const char* texClick)
     drect.x = x - srect.w;
     drect.y = y - srect.h;
 
-    isSelected = false;
+    isSelected = true;
+    action = nullptr;
 
 }
 
-void Button::update(Mouse* mouse){
+void Button::update(Mouse* mouse, Game* game){
     if(SDL_HasIntersection(&drect, &mouse->point)){
         isSelected = true;
+        std::cout << "Mouse is over the button!" << std::endl; // Debug
+        if(mouse->isClicked()){
+            if(action){
+                action(game);
+            }
+        }
     }
     else{
         isSelected = false;
     }
 }
 
-void Button::draw(){
+void Button::draw(SDL_Renderer* renderer){
     if(isSelected){
-        SDL_RenderCopy(Game::m_renderer,texClick,&srect,&drect);
+        SDL_RenderCopy(renderer,texClick,&srect,&drect);
     }
     else{
-        SDL_RenderCopy(Game::m_renderer,texDefault,&srect,&drect);
+        SDL_RenderCopy(renderer,texDefault,&srect,&drect);
     }
 
 }
 
-bool Button::getIsSelected(){
-    return isSelected;
-}
+
+ void Button::setAction(std::function<void(Game* game)> action) {
+        this->action = action; // Imposta l'azione del bottone
+    }
+
 
 Button::~Button()
 {
-    //dtor
+     // Libera le texture
+    SDL_DestroyTexture(texDefault);
+    SDL_DestroyTexture(texClick);   
 }

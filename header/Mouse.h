@@ -11,12 +11,14 @@ class Mouse {
     private:
         SDL_Texture* texture;
         SDL_Rect rect{};
+        bool clicked;
 
     public:
         SDL_Rect point{};
         Mouse();
         void update();
         void draw() const;
+        bool isClicked() const;
 };
 
 

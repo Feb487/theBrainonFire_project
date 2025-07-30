@@ -4,13 +4,15 @@
 
 #include "../header/Game.h"
 #include "../header/Mouse.h"
+#include "../header/Menu.h"
 #include <bits/ostream.tcc>
 
 //dichiarazione elementi globali
 SDL_Renderer* Game::m_renderer = nullptr;
-Mouse *mouse;
+Mouse *mouse = nullptr;
 
 Game::Game() {
+    
     ffscreen = 0;
     isRunning = true;
     m_window = nullptr;
@@ -19,7 +21,17 @@ Game::~Game() {
     SDL_DestroyWindow(m_window);
     SDL_DestroyRenderer(m_renderer);
     SDL_Quit();
+    delete currentState;
     std::cout << "Game Cleaned"<<std::endl;
+}
+
+void Game::setRunning(bool state){
+    isRunning = state; 
+}
+
+void Game::changeState(GameState* newState){
+    delete currentState; // Libera il vecchio stato
+    currentState = newState; // Cambia stato
 }
 
 using namespace std;
@@ -29,15 +41,8 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         ffscreen = SDL_WINDOW_FULLSCREEN;
     }
 
-int n = SDL_GetNumAudioDrivers();
-        for (int i = 0; i < n; ++i) {
-        printf("Audio driver %d: %s\n", i, SDL_GetAudioDriver(i));
-        }
-
     if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
 
-
-        
         cout << "SDL_Init success" << endl;
         m_window = SDL_CreateWindow(title, xpos, ypos, width, height, ffscreen);
         if (m_window == nullptr) {
@@ -50,34 +55,29 @@ int n = SDL_GetNumAudioDrivers();
 
         isRunning = true; // se tutto va bene avvisiamo che il gioco é in esecuzione
         mouse = new Mouse();
+        currentState = new Menu(); 
 
     }else
     {
         std::cout << "Errore nella inizilizzazione dei sistemi : " << SDL_GetError() << std::endl;
         isRunning = false; // se tutto va male, chiudiamo il gioco
     }
-
-   }
+}
 void Game::handleEvents() {
-    SDL_Event event;
-    while (SDL_PollEvent(&event)) {
-        if (event.type == SDL_QUIT) {
-            isRunning = false;
-        }
-        if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_ESCAPE) {
-            isRunning = false;
-        }
-    }
+         mouse->update();
+        currentState->handleEvents(this,mouse);    
 }
 
 void Game::update() {
-    mouse->update();
+   
+
+    currentState->update();
 }
-void Game::render() {
-SDL_SetRenderDrawColor(m_renderer, 0, 128, 0, 255); // Colore di sfondo nero
+
+void Game::draw(){
     SDL_RenderClear(m_renderer);
-    
-    mouse->draw(); // Assicurati che questa funzione disegni qualcosa
+        currentState->draw();
+        mouse->draw(); // Assicurati che questa funzione disegni qualcosa
 
     SDL_RenderPresent(m_renderer);
 }
