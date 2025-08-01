@@ -54,8 +54,10 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         }
 
         isRunning = true; // se tutto va bene avvisiamo che il gioco é in esecuzione
+        soundGame = new Sound(); 
         mouse = new Mouse();
-        currentState = new Menu(); 
+        
+        currentState = new Menu(this); 
 
     }else
     {
@@ -64,13 +66,11 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     }
 }
 void Game::handleEvents() {
-         mouse->update();
+        mouse->update();
         currentState->handleEvents(this,mouse);    
 }
 
 void Game::update() {
-   
-
     currentState->update();
 }
 
@@ -78,7 +78,6 @@ void Game::draw(){
     SDL_RenderClear(m_renderer);
         currentState->draw();
         mouse->draw(); // Assicurati che questa funzione disegni qualcosa
-
     SDL_RenderPresent(m_renderer);
 }
 

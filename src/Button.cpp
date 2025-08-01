@@ -28,7 +28,6 @@ Button::Button(int x, int y,const char* texDefault, const char* texClick)
 void Button::update(Mouse* mouse, Game* game){
     if(SDL_HasIntersection(&drect, &mouse->point)){
         isSelected = true;
-        std::cout << "Mouse is over the button!" << std::endl; // Debug
         if(mouse->isClicked()){
             if(action){
                 action(game);

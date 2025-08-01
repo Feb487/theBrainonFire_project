@@ -20,7 +20,6 @@ void Mouse::update() {
     point.w = 1;
     point.h = 1;
 
-    std::cout << "Mouse Position: (" << point.x << ", " << point.y << ")" << std::endl; // Debug
     // Controlla se il pulsante sinistro del mouse è stato premuto
     clicked = (SDL_GetMouseState(nullptr,nullptr) & SDL_BUTTON(SDL_BUTTON_LEFT)) != 0;
 }

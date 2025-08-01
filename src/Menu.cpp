@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 
-Menu::Menu()
+Menu::Menu(Game *game)
 {
         buttonPlay = new Button(700,300,".//assets//menu_buttons//start-menu//Gioca_button.png",".//assets//menu_buttons//start-menu//Giocapressed_button.png");
         buttonRule = new Button(700,390,".//assets//menu_buttons//start-menu//Regole_button.png",".//assets//menu_buttons//start-menu//Regolepressed_button.png");
@@ -12,9 +12,20 @@ Menu::Menu()
         backgrouds = TextureManager::LoadTexture(".//assets//Backgrounds//bg_12.png");
         logo = TextureManager::LoadTexture(".//assets//game_logo//animation_logo.png");
 
+        buttonPlay->setAction([](Game* game){
+            game->soundGame->playClick();
+        });
+        buttonRule->setAction([](Game* game){
+            game->soundGame->playClick();
+        });
+        buttonOptions->setAction([](Game* game){
+            game->soundGame->playClick();
+        });
         buttonExit->setAction([](Game* game){
+            game->soundGame->playClick();
             game->setRunning(false);
         });
+
         buttons.push_back(buttonPlay);
         buttons.push_back(buttonRule);
         buttons.push_back(buttonOptions);
@@ -45,16 +56,17 @@ Menu::Menu()
         totalFrameLogo = 8;
         contatoreFrame = 0;
         ritardoFrame = 8;
+        
+        game->soundGame->playOstMenu();
+
 }
 void Menu::handleEvents(Game* game, Mouse *mouse) {
-//    std::cout << "ciaoo";
         SDL_Event event;
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
                 game->setRunning(false);
             }
             for (auto& button : buttons) {
-  //               std::cout << "ciaoo dal bottone";
                 button->update(mouse,game); // Passa il puntatore del mouse
             }
         }

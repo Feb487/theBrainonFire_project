@@ -9,6 +9,8 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 #include "GameState.h"
+#include "Sound.h"
+
 
 class Game {
     public:
@@ -22,6 +24,8 @@ class Game {
     bool running();
     void changeState(GameState* newState);
     static SDL_Renderer *m_renderer;
+
+    Sound* soundGame;
 
     private:
     GameState* currentState;

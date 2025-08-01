@@ -4,10 +4,11 @@
 #include <vector>
 #include "GameState.h"
 #include "Button.h"
+#include "Sound.h"
 
 class Menu : public GameState {
 public:
-    Menu();
+    Menu(Game* game);
     virtual ~Menu();
 
     void handleEvents(Game* game, Mouse* mouse) override;
@@ -24,9 +25,7 @@ public:
     Button *buttonExit;
     Button *buttonRule;
     Button *buttonOptions;
-
-
-
+   
     private:
 
     SDL_Texture *backgrouds;
@@ -40,6 +39,7 @@ public:
     int totalFrameLogo;
     int contatoreFrame;
     int ritardoFrame;
+    Sound* soundMenu;
 
 };
 

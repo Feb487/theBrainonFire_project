@@ -6,6 +6,7 @@
 
 class Game; // Forward declaration della classe Game
 class Mouse;
+class Sound;
 
 class GameState {
 public:
