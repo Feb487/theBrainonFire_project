@@ -23,8 +23,8 @@ class Game {
     void setRunning(bool state);
     bool running();
     void changeState(GameState* newState);
+   
     static SDL_Renderer *m_renderer;
-
     Sound* soundGame;
 
     private:

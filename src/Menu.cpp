@@ -1,5 +1,6 @@
 
 #include "../header/Menu.h"
+#include "../header/RuleMenu.h"
 #include <unistd.h>
 
 
@@ -11,20 +12,6 @@ Menu::Menu(Game *game)
         buttonExit = new Button(700,570,".//assets//menu_buttons//start-menu//Esci_button.png",".//assets//menu_buttons//start-menu//Escipressed_button.png");
         backgrouds = TextureManager::LoadTexture(".//assets//Backgrounds//bg_12.png");
         logo = TextureManager::LoadTexture(".//assets//game_logo//animation_logo.png");
-
-        buttonPlay->setAction([](Game* game){
-            game->soundGame->playClick();
-        });
-        buttonRule->setAction([](Game* game){
-            game->soundGame->playClick();
-        });
-        buttonOptions->setAction([](Game* game){
-            game->soundGame->playClick();
-        });
-        buttonExit->setAction([](Game* game){
-            game->soundGame->playClick();
-            game->setRunning(false);
-        });
 
         buttons.push_back(buttonPlay);
         buttons.push_back(buttonRule);
@@ -61,31 +48,52 @@ Menu::Menu(Game *game)
 
 }
 void Menu::handleEvents(Game* game, Mouse *mouse) {
-        SDL_Event event;
-        while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT) {
+    
+    SDL_Event event;
+    while (SDL_PollEvent(&event)) {
+    if (event.type == SDL_QUIT) {
+        game->setRunning(false);
+    } else if (event.type == SDL_MOUSEBUTTONUP) {
+        if (event.button.button == SDL_BUTTON_LEFT) {
+            if (buttonPlay->getIsSelected()) {
+                std::cout << "Pulsante Play cliccato!" << std::endl;
+            } else if (buttonRule->getIsSelected()) {
+                std::cout << "Pulsante Rule cliccato!" << std::endl;
+                GameState* rulemenu = new RuleMenu(game);
+                game->changeState(rulemenu);
+            } else if (buttonExit->getIsSelected()) {
+                std::cout << "Pulsante Exit cliccato, fine gioco..." << std::endl;
                 game->setRunning(false);
-            }
-            for (auto& button : buttons) {
-                button->update(mouse,game); // Passa il puntatore del mouse
+            } else {
+                std::cout << "Pulsante Option cliccato!" << std::endl;
             }
         }
+    } else {
+        buttonPlay->setIsSelected(false);
+        buttonRule->setIsSelected(false);
+        buttonOptions->setIsSelected(false);
     }
-Menu::~Menu()
-{
+   }
+
+    for (auto& button : buttons) {
+                button->update(mouse);
+            }    
+
+} 
+Menu::~Menu(){
     std::cout << "distruzione menu !" << std::endl;
-        for (auto button : buttons) {
-            delete button; // Libera la memoria dei bottoni
-        }
+    for (auto button : buttons) {
+        delete button; 
+    }
 }
 void Menu::update() {
-    updateLogo();
+        updateLogo();
 }
 
 void Menu::draw() {
     TextureManager::Draw(backgrouds,Bsrect,Bdrect);
     for (auto& button : buttons) {
-            button->draw(Game::m_renderer);
+            button->draw();
         }    
     TextureManager::Draw(logo,Lsrect,Ldrect);
 }

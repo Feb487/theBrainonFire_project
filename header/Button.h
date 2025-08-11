@@ -8,24 +8,24 @@
 #include "../header/Mouse.h"
 #include <functional>
 
-class Game; // Forward declaration della classe Game
-class Mouse; // Forward declaration della classe Mouse
+class Button
+{
+    public:
+        Button(int x, int y,const char* texDefault, const char* texClick);
+        virtual ~Button();
+        bool getIsSelected();
+        void setIsSelected(bool state);
+        void update(Mouse*);
+        void draw();
+        void setDirect(int x, int y);
+        SDL_Rect srect,drect;
 
-class Button {
-public:
-    Button(int x, int y, const char* texDefault, const char* texClick);
-    virtual ~Button();
+    private:
+        bool isSelected;
+        SDL_Texture *texDefault;
+        SDL_Texture *texClick;
 
-    void setAction(std::function<void(Game* game)> action);
-    void update(Mouse* mouse, Game* game);
-    void draw(SDL_Renderer* renderer);
 
-private:
-    SDL_Texture* texDefault;
-    SDL_Texture* texClick;
-    std::function<void(Game* game)> action;
-    bool isSelected;
-    SDL_Rect srect, drect;
 };
 
 #endif //BUTTON_H

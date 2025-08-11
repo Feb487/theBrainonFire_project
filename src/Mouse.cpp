@@ -20,9 +20,7 @@ void Mouse::update() {
     point.w = 1;
     point.h = 1;
 
-    // Controlla se il pulsante sinistro del mouse è stato premuto
-    clicked = (SDL_GetMouseState(nullptr,nullptr) & SDL_BUTTON(SDL_BUTTON_LEFT)) != 0;
-}
+    }
 
 void Mouse::draw() const{
     SDL_RenderCopy(Game::m_renderer, texture,nullptr, &rect);

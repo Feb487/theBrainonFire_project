@@ -5,6 +5,7 @@
 #include "../header/Game.h"
 #include "../header/Mouse.h"
 #include "../header/Menu.h"
+#include "../header/RuleMenu.h"
 #include <bits/ostream.tcc>
 
 //dichiarazione elementi globali
@@ -30,8 +31,9 @@ void Game::setRunning(bool state){
 }
 
 void Game::changeState(GameState* newState){
-    delete currentState; // Libera il vecchio stato
     currentState = newState; // Cambia stato
+
+    delete currentState; // Libera il vecchio stato
 }
 
 using namespace std;
@@ -57,7 +59,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         soundGame = new Sound(); 
         mouse = new Mouse();
         
-        currentState = new Menu(this); 
+        currentState = new RuleMenu(this); 
 
     }else
     {
@@ -70,7 +72,7 @@ void Game::handleEvents() {
         currentState->handleEvents(this,mouse);    
 }
 
-void Game::update() {
+void Game::update() { 
     currentState->update();
 }
 
@@ -84,5 +86,4 @@ void Game::draw(){
 bool Game::running() {
     return isRunning;
 }
-
 
