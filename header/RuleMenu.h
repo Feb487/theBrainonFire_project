@@ -2,6 +2,7 @@
 #define RULEMENU_H
 
 #include "Button.h"
+#include "Menu.h"
 #include <SDL2/SDL_ttf.h>
 
 class RuleMenu : public GameState 

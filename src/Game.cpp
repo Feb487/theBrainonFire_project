@@ -5,7 +5,6 @@
 #include "../header/Game.h"
 #include "../header/Mouse.h"
 #include "../header/Menu.h"
-#include "../header/RuleMenu.h"
 #include <bits/ostream.tcc>
 
 //dichiarazione elementi globali
