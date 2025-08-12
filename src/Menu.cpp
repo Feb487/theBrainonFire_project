@@ -61,6 +61,7 @@ void Menu::handleEvents(Game* game, Mouse *mouse) {
                 std::cout << "Pulsante Rule cliccato!" << std::endl;
                 GameState* rulemenu = new RuleMenu(game);
                 game->changeState(rulemenu);
+                return;
             } else if (buttonExit->getIsSelected()) {
                 std::cout << "Pulsante Exit cliccato, fine gioco..." << std::endl;
                 game->setRunning(false);

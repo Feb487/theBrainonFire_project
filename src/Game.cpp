@@ -31,11 +31,11 @@ void Game::setRunning(bool state){
 }
 
 void Game::changeState(GameState* newState){
-    currentState = newState; // Cambia stato
-
-    delete currentState; // Libera il vecchio stato
+    if (currentState != nullptr) {
+        delete currentState; // Libera il vecchio stato
+    }
+    currentState = newState; // Imposta il nuovo stato}
 }
-
 using namespace std;
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {
 
@@ -59,7 +59,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         soundGame = new Sound(); 
         mouse = new Mouse();
         
-        currentState = new RuleMenu(this); 
+        currentState = new Menu(this); 
 
     }else
     {
