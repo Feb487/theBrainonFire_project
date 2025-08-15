@@ -18,16 +18,13 @@ public:
     void updateStartMenu(Mouse *mouse);
     void updateLogo();
     void drawStartMenu();    
+      
+    private:
     SDL_Rect srectWL,drectWL;
-
-    // bottoni star menu
     Button *buttonPlay;
     Button *buttonExit;
     Button *buttonRule;
     Button *buttonOptions;
-   
-    private:
-
     SDL_Texture *backgrouds;
     SDL_Texture *logo;
     SDL_Texture *backgroudsMenuGiochi;

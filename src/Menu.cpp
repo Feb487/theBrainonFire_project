@@ -1,6 +1,7 @@
 
 #include "../header/Menu.h"
 #include "../header/RuleMenu.h"
+#include "../header/GameMenu.h"
 #include <unistd.h>
 
 
@@ -18,21 +19,15 @@ Menu::Menu(Game *game)
         buttons.push_back(buttonOptions);
         buttons.push_back(buttonExit);
 
-                // rettangoli backgrouns
+        Bsrect.x = 0;
+        Bsrect.y = 0;
+        Bsrect.h = 816;
+        Bsrect.w = 1456;
 
-            // background Start Menu
-            Bsrect.x = 0;
-            Bsrect.y = 0;
-            Bsrect.h = 816;
-            Bsrect.w = 1456;
-
-            Bdrect.x = Bsrect.x;
-            Bdrect.y = Bsrect.y;
-            Bdrect.h = 736;
-            Bdrect.w = 1216;
-
-            
-        // rettangoli logo
+        Bdrect.x = Bsrect.x;
+        Bdrect.y = Bsrect.y;
+        Bdrect.h = 736;
+        Bdrect.w = 1216;
 
         Ldrect.x = 370;
         Ldrect.y = 100;
@@ -57,6 +52,9 @@ void Menu::handleEvents(Game* game, Mouse *mouse) {
         if (event.button.button == SDL_BUTTON_LEFT) {
             if (buttonPlay->getIsSelected()) {
                 std::cout << "Pulsante Play cliccato!" << std::endl;
+                GameState* gamemenu = new GameMenu(game);
+                game->changeState(gamemenu);
+                return;
             } else if (buttonRule->getIsSelected()) {
                 std::cout << "Pulsante Rule cliccato!" << std::endl;
                 GameState* rulemenu = new RuleMenu(game);
@@ -82,10 +80,24 @@ void Menu::handleEvents(Game* game, Mouse *mouse) {
 
 } 
 Menu::~Menu(){
-    std::cout << "distruzione menu !" << std::endl;
-    for (auto button : buttons) {
+    if (backgrouds) {
+        SDL_DestroyTexture(backgrouds);
+        backgrouds = nullptr; // Imposta a nullptr per evitare dangling pointer
+    }
+    if (logo) {
+        SDL_DestroyTexture(logo);
+        logo = nullptr; // Imposta a nullptr per evitare dangling pointer
+    }
+    if (backgroudsMenuGiochi) {
+        SDL_DestroyTexture(backgroudsMenuGiochi);
+        backgroudsMenuGiochi = nullptr; // Imposta a nullptr per evitare dangling pointer
+    }
+
+    for (Button* button : buttons) {
         delete button; 
     }
+    buttons.clear();
+    delete soundMenu; 
 }
 void Menu::update() {
         updateLogo();

@@ -1,8 +1,6 @@
 
 #include "../header/RuleMenu.h"
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
-int x=0;
+
 RuleMenu::RuleMenu(Game* game) {
     backRuleMemoria = TextureManager::LoadTexture(".//assets//background//backgroundregole//backgroundmemoria_regole.png");
     backRuleLinguaggio = TextureManager::LoadTexture(".//assets//background//backgroundregole//backgroundlinguaggio_regole.png");
@@ -34,6 +32,8 @@ RuleMenu::RuleMenu(Game* game) {
     Bdrect.y = Bsrect.y;
     Bdrect.h = 736;
     Bdrect.w = 1216;
+
+    setCurrentRule(rule1);
    }
 
 // Distruttore
@@ -49,15 +49,12 @@ RuleMenu::~RuleMenu() {
         SDL_DestroyTexture(backRuleConcentrazione);
     }
 
-    // Libera i pulsanti
-    delete buttonNumGame1;
-    delete buttonNumGame2;
-    delete buttonNumGame3;
-    delete buttonExitRule;
+    for (Button* button : buttons) {
+        delete button;     }
+    buttons.clear(); 
     
 }
 
-// Metodo per aggiornare le regole in base al mouse
 void RuleMenu::handleEvents(Game* game,Mouse* mouse) {
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
@@ -66,19 +63,17 @@ void RuleMenu::handleEvents(Game* game,Mouse* mouse) {
     } else if (event.type == SDL_MOUSEBUTTONUP) {
         if (event.button.button == SDL_BUTTON_LEFT) {
             if (buttonNumGame1->getIsSelected()) {
-                std::cout << "Pulsante Num1 cliccato!" << std::endl;
-                    x=0;
+                setCurrentRule(rule1);
             } else if (buttonNumGame2->getIsSelected()) {
-                std::cout << "Pulsante Num2 cliccato!" << std::endl;
-                    x=1;
+                setCurrentRule(rule2);
             } else if (buttonNumGame3->getIsSelected()) {
-                std::cout << "Pulsante Num3 cliccato" << std::endl;
-                x=2;
-            } else {
-                std::cout << "Esci cliccato" << std::endl;
+                setCurrentRule(rule3);
+            } else if (buttonExitRule->getIsSelected()){
                 GameState* menu = new Menu(game);
                 game->changeState(menu);
                 return;
+            } else{
+                std::cout << "Nessun pulsante selezionato !" << std::endl;
             }
         }
     } else {
@@ -87,31 +82,34 @@ void RuleMenu::handleEvents(Game* game,Mouse* mouse) {
         buttonNumGame3->setIsSelected(false);
     }
    }
-        for (auto& button : buttons) {
-                button->update(mouse);
-            }  
+    for (auto& button : buttons) { button->update(mouse);}  
 }
 
-void RuleMenu::update(){
-//nothig to update...    
-}
+void RuleMenu::update(){}
 void RuleMenu::setCurrentRule(DrawRule rule) {
     currentRule = rule;
 }
 
-// Implementazione del metodo per ottenere la regola corrente
 RuleMenu::DrawRule RuleMenu::getCurrentRule() {
     return currentRule;
 }
 
 void RuleMenu::draw(){
-    if (x == 0){
-        TextureManager::Draw(backRuleConcentrazione,Bsrect,Bdrect);
-    }else if (x == 1){
-        TextureManager::Draw(backRuleLinguaggio,Bsrect,Bdrect);
-    }else{
-        TextureManager::Draw(backRuleMemoria,Bsrect,Bdrect);
-    }           
+
+    switch (currentRule){
+        case rule1:
+            TextureManager::Draw(backRuleConcentrazione,Bsrect,Bdrect);
+            break;
+        case rule2:
+            TextureManager::Draw(backRuleLinguaggio,Bsrect,Bdrect);
+            break;
+        case rule3:
+            TextureManager::Draw(backRuleMemoria,Bsrect,Bdrect);
+            break;
+        default:
+        std::cout << "Regola non valida" << std::endl;
+    }
+
     for (auto& button : buttons) { button->draw();}  
 }
 
