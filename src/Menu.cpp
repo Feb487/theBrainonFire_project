@@ -39,8 +39,7 @@ Menu::Menu(Game *game)
         contatoreFrame = 0;
         ritardoFrame = 8;
         
-        game->soundGame->playOstMenu();
-
+       game->soundGame->playOstMenu();
 }
 void Menu::handleEvents(Game* game, Mouse *mouse) {
     
@@ -72,12 +71,11 @@ void Menu::handleEvents(Game* game, Mouse *mouse) {
         buttonRule->setIsSelected(false);
         buttonOptions->setIsSelected(false);
     }
+
    }
 
-    for (auto& button : buttons) {
-                button->update(mouse);
-            }    
-
+    for (auto& button : buttons) { button->update(mouse);} 
+    
 } 
 Menu::~Menu(){
     if (backgrouds) {
@@ -97,7 +95,6 @@ Menu::~Menu(){
         delete button; 
     }
     buttons.clear();
-    delete soundMenu; 
 }
 void Menu::update() {
         updateLogo();
@@ -105,9 +102,7 @@ void Menu::update() {
 
 void Menu::draw() {
     TextureManager::Draw(backgrouds,Bsrect,Bdrect);
-    for (auto& button : buttons) {
-            button->draw();
-        }    
+    for (auto& button : buttons) { button->draw();} 
     TextureManager::Draw(logo,Lsrect,Ldrect);
 }
 

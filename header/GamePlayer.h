@@ -1,35 +1,49 @@
 #ifndef GAMEPLAYER_H
 #define GAMEPLAYER_H
 
-#include <SDL2/SDL_render.h>
-#include <SDL2/SDL.h>
 #include <array>
+#include "TextureManager.h"
+#include "Game.h"
 
 class GamePlayer {
 public:
     GamePlayer();
     virtual ~GamePlayer();
 
-    void init(const char* texturesheetD,const char* texturesheetA,const char* texturesheetW,const char* texturesheetS,const char* W,const char* A, const char* S, const char* D,const char* death, int x, int y);
+    void init(const char* texturesheetD,const char* texturesheetA,
+              const char* texturesheetW,const char* texturesheetS,
+              const char* W,const char* A, const char* S, const char* D,const char* death,
+              int x, int y);
 
     int getXpos();
     int getYpos();
     void setXpos(int x);
     void setYPos(int y);
+    void handleEvents(SDL_Event& event);
+    void update();
+    void draw();
 
-    void setW();
-    void setA();
-    void setS();
-    void setD();
-
-    void attivaDirezione(int indiceAttivo);
-
+    
 private:
 
     int xpos;
     int ypos;
 
-    std::array<bool, 4> direzioni = {false, false, false, false};
+    enum Direzione {
+        UP,
+        DOWN,
+        LEFT,
+        RIGHT
+    };
+
+   
+    void setW();
+    void setA();
+    void setS();
+    void setD();
+
+    void setDefault();
+
     SDL_Texture* objTexureD; 
     SDL_Texture* objTexureA; 
     SDL_Texture* objTexureW;
@@ -44,7 +58,15 @@ private:
 
     int const SPEED = 4;
     
-    SDL_Texture* currentTexture;
+    // Numero totale di frame nell'animazione "idle"
+    int const totalFrames = 8;
+    int const rFrame = 8;
+    // Variabile per tenere traccia del frame corrente
+    int currentFrame;
+    int cFrame;
+    
+    SDL_Texture* currentAnimation;
+    int lastAnimation;
 
 };
 

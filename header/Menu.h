@@ -37,7 +37,6 @@ public:
     int contatoreFrame;
     int ritardoFrame;
     Sound* soundMenu;
-
 };
 
 #endif // MENU_H
