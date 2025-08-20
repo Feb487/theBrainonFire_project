@@ -1,0 +1,20 @@
+
+#Brain on Fire - Git Ignore
+
+# File e cartelle di build
+/bin/
+/release/
+
+# Script
+make_appImage.sh
+
+# File di compilazione
+*.o
+*.out
+*.log
+*.tmp
+
+# Backup ed editor
+*~
+*.swp
+.DS_Store

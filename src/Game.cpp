@@ -78,7 +78,7 @@ void Game::update() {
 void Game::draw(){
     SDL_RenderClear(m_renderer);
         currentState->draw();
-        mouse->draw(); // Assicurati che questa funzione disegni qualcosa
+        mouse->draw(); 
     SDL_RenderPresent(m_renderer);
 }
 

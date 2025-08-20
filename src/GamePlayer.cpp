@@ -24,8 +24,8 @@ void GamePlayer::init(const char* texturesheetD,const char* texturesheetA,
               const char* W,const char* A, const char* S, const char* D,const char* death,
               int x, int y){
 
-    objTexureD = TextureManager::LoadTexture(texturesheetD); // default destra
-    objTexureA = TextureManager::LoadTexture(texturesheetA); // default sinistra
+    objTexureD = TextureManager::LoadTexture(texturesheetD); 
+    objTexureA = TextureManager::LoadTexture(texturesheetA); 
     objTexureW = TextureManager::LoadTexture(texturesheetW);
     objTexureS = TextureManager::LoadTexture(texturesheetS);
 
@@ -98,7 +98,6 @@ void GamePlayer::draw(){
     SDL_RenderCopy(Game::m_renderer,currentAnimation,&srcRect,&destRect);
 }
 
-// Implementazione dei metodi get
 int GamePlayer::getXpos() {
     return xpos;
 }

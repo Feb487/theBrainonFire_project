@@ -36,9 +36,7 @@ RuleMenu::RuleMenu(Game* game) {
     setCurrentRule(rule1);
    }
 
-// Distruttore
 RuleMenu::~RuleMenu() {
-    // Libera le texture
     if (backRuleMemoria != nullptr) {
         SDL_DestroyTexture(backRuleMemoria);
     }

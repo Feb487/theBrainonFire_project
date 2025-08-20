@@ -80,15 +80,15 @@ void Menu::handleEvents(Game* game, Mouse *mouse) {
 Menu::~Menu(){
     if (backgrouds) {
         SDL_DestroyTexture(backgrouds);
-        backgrouds = nullptr; // Imposta a nullptr per evitare dangling pointer
+        backgrouds = nullptr; 
     }
     if (logo) {
         SDL_DestroyTexture(logo);
-        logo = nullptr; // Imposta a nullptr per evitare dangling pointer
+        logo = nullptr; 
     }
     if (backgroudsMenuGiochi) {
         SDL_DestroyTexture(backgroudsMenuGiochi);
-        backgroudsMenuGiochi = nullptr; // Imposta a nullptr per evitare dangling pointer
+        backgroudsMenuGiochi = nullptr; 
     }
 
     for (Button* button : buttons) {
