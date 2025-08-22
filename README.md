@@ -5,7 +5,7 @@
 - 🎯 **Concentrazione**
 - 🔤 **Linguaggio**
 
-Il gioco è sviluppato in **C++** e utilizza la libreria  per la gestione di grafica, audio e input.  
+Il gioco è sviluppato in **C++** e utilizza la libreria **[SDL2](https://www.libsdl.org/)** per la gestione di grafica, audio e input.  
 
 ---
 
@@ -80,16 +80,6 @@ sudo dnf install cmake
 sudo pacman -S cmake
 ```
 
-Compila il progetto:  
-```bash
-g++ -o theBrainOnFire main.cpp src/*.cpp -Iheader -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf
-```
-
-Esegui il gioco:  
-```bash
-./theBrainOnFire
-```
-
 ---
 
 ## 🤝 Come Contribuire
@@ -104,7 +94,7 @@ Vuoi aiutarci a migliorare **Brain on Fire**? Segui questi passaggi:
    ```
    SSH:
    ```bash
-   git clone git@github.com:tuo-nickname/theBrainonFire_project.git
+   git clone git@github.com:il-tuo-nickname/theBrainonFire_project.git
    ```
 3. **Spostati** nella cartella del progetto
    ```bash
@@ -130,7 +120,7 @@ Vuoi aiutarci a migliorare **Brain on Fire**? Segui questi passaggi:
 7. **Apri** una **Pull Request (PR)** dal tuo branch al branch `main` del repository principale.  
 8. Una volta accettata la **Pull Request (PR)** potrai eliminare il branch utilizzato:
    ```bash
-   git checkout -d feature-nome-feature
+   git branch -d feature-nome-feature
    ```
 ---
 
