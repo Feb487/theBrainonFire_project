@@ -5,7 +5,7 @@
 - 🎯 **Concentrazione**
 - 🔤 **Linguaggio**
 
-Il gioco è sviluppato in **C++** e utilizza la libreria **[SDL2](https://www.libsdl.org/)** per la gestione di grafica, audio e input.  
+Il gioco è sviluppato in **C++** e utilizza la libreria  per la gestione di grafica, audio e input.  
 
 ---
 
@@ -13,9 +13,34 @@ Il gioco è sviluppato in **C++** e utilizza la libreria **[SDL2](https://www.li
 
 Per collaborare allo sviluppo, assicurati di avere:  
 - Un sistema **Linux** (Ubuntu, Fedora, Arch, ecc.)  
-- **SDL2** installato  
-- Un compilatore **C++** (`g++` o `clang++`)  
-- **Git** installato  
+- **[SDL2](https://www.libsdl.org/)** installato.
+- Un compilatore **C++** (`cmake`)
+- **[Git](https://git-scm.com/)** installato.
+
+---
+
+## 💾​ Cos'è SDL2?
+
+**[SDL2 (Simple DirectMedia Layer)](https://www.libsdl.org/)** è una libreria **multipiattaforma** scritta in C che fornisce un’interfaccia semplice per:  
+- 🎨 **Grafica 2D** → finestre, rendering e gestione degli sprite.  
+- 🎮 **Input** → tastiera, mouse, controller e gamepad.  
+- 🔊 **Audio** → effetti sonori e musica.  
+- ⏱️ **Timer e threading** → sincronizzazione e multitasking.  
+
+SDL2 è utilizzata da molte aziende e progetti famosi (tra cui **Valve**, **id Software** e **Epic Games**) ed è uno strumento fondamentale per chi sviluppa videogiochi **indie** o applicazioni multimediali.  
+
+---
+
+## 💻 Cos'è CMake?
+
+**[CMake](https://cmake.org/)** è un sistema di build **multipiattaforma** scritto in C++ che permette di:
+
+- 📂 **Gestire progetti complessi** → organizza codice sorgente e dipendenze.
+- ⚙️ **Generare build system** → produce file per Makefile, Ninja, Visual Studio, Xcode, ecc.
+- 🔗 **Gestire librerie** → rileva e configura automaticamente pacchetti esterni.
+- 🚀 **Portabilità** → lo stesso progetto può essere compilato su Linux, Windows, macOS e altre piattaforme.
+
+CMake è ampiamente usato in progetti open source e commerciali, tra cui **LLVM/Clang**, **Qt**, **Blender** e **KDE**.
 
 ---
 
@@ -38,11 +63,21 @@ sudo pacman -S sdl2 sdl2_image sdl2_ttf sdl2_mixer
 
 ---
 
-## 📥 Clonare il Progetto
+## 🛠️ Installazione di CMake
 
-Clona il repository:  
+### Debian/Ubuntu
 ```bash
-git clone https://github.com/Feb487/theBrainonFire_project.git
+sudo apt-get install cmake
+```
+
+### Fedora
+```bash
+sudo dnf install cmake
+```
+
+### Arch Linux
+```bash
+sudo pacman -S cmake
 ```
 
 Compila il progetto:  
@@ -57,46 +92,65 @@ Esegui il gioco:
 
 ---
 
-## 🎮 Cosa è SDL2?
-
-**[SDL2 (Simple DirectMedia Layer)](https://www.libsdl.org/)** è una libreria **multipiattaforma** scritta in C che fornisce un’interfaccia semplice per:  
-- 🎨 **Grafica 2D** → finestre, rendering e gestione degli sprite.  
-- 🎮 **Input** → tastiera, mouse, controller e gamepad.  
-- 🔊 **Audio** → effetti sonori e musica.  
-- ⏱️ **Timer e threading** → sincronizzazione e multitasking.  
-
-SDL2 è utilizzata da molte aziende e progetti famosi (tra cui **Valve**, **id Software** e **Epic Games**) ed è uno strumento fondamentale per chi sviluppa videogiochi **indie** o applicazioni multimediali.  
-
----
-
 ## 🤝 Come Contribuire
 
 Vuoi aiutarci a migliorare **Brain on Fire**? Segui questi passaggi:  
 
 1. **Forka** il repository su GitHub.  
 2. **Clona** il tuo fork in locale:  
+   HTTPS:
    ```bash
-   git clone https://github.com/tuo-username/theBrainonFire_project.git
+   git clone https://github.com/Feb487/theBrainonFire_project.git
+   ```
+   SSH:
+   ```bash
+   git clone git@github.com:tuo-nickname/theBrainonFire_project.git
+   ```
+3. **Spostati** nella cartella del progetto
+   ```bash
    cd theBrainonFire_project
    ```
-3. **Crea un branch dedicato** per la tua modifica (non lavorare mai direttamente su `main`):  
+4. **Crea** un branch dedicato per la tua modifica (non lavorare mai direttamente su `main`):  
    ```bash
-   git checkout -b master-tuo-nome
+   git checkout -b feature-nome-feature
    ```
    Esempio:  
    ```bash
-   git checkout -b master-pluto
+   git checkout -b feature-fix-player
    ```
-4. **Fai le modifiche** e committale:  
+5. **Effettua** le modifiche e committale:  
    ```bash
    git add .
    git commit -m "Commenta la commit con ciò che hai modificato"
    ```
-5. **Pusha il branch** sul tuo fork:  
+6. **Pusha** il branch sul tuo fork:  
    ```bash
-   git push origin master-tuo-nome
+   git push origin feature-nome-feature
    ```
-6. Apri una **Pull Request (PR)** dal tuo branch al branch `main` del repository principale.  
+7. **Apri** una **Pull Request (PR)** dal tuo branch al branch `main` del repository principale.  
+8. Una volta accettata la **Pull Request (PR)** potrai eliminare il branch utilizzato:
+   ```bash
+   git checkout -d feature-nome-feature
+   ```
+---
+
+## 🎮 Come eseguire il Gioco
+
+Vuoi giocare a **Brain on Fire**? Segui questi passaggi:
+
+1. **Spostati** nella cartella debug:
+   ```bash
+   cd build/release
+   ```
+2. **Compila** utilizzando cmake:
+   ```bash
+   #cmake --build . -j$(nproc)
+   ```
+3. **Esegui** il file compilato:
+   ```bash
+   #cmake --build . --target run
+   ```
+4. **Divertiti**!
 
 ---
 
@@ -105,4 +159,4 @@ Per domande, suggerimenti o collaborazioni, apri una **Issue** su GitHub o utili
 
 ---
 
-*Divertiti a sviluppare e a migliorare il tuo cervello con Brain on Fire!** 🚀
+*Divertiti a sviluppare e a migliorare il tuo cervello con Brain on Fire!* 🚀
