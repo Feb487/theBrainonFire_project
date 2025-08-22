@@ -76,25 +76,25 @@ Vuoi aiutarci a migliorare **Brain on Fire**? Segui questi passaggi:
 1. **Forka** il repository su GitHub.  
 2. **Clona** il tuo fork in locale:  
    ```bash
-   git clone https://github.com/tuo-username/brain-on-fire.git
-   cd brain-on-fire
+   git clone https://github.com/tuo-username/theBrainonFire_project.git
+   cd theBrainonFire_project
    ```
 3. **Crea un branch dedicato** per la tua modifica (non lavorare mai direttamente su `main`):  
    ```bash
-   git checkout -b nome-feature
+   git checkout -b master-tuo-nome
    ```
    Esempio:  
    ```bash
-   git checkout -b fix-input-handler
+   git checkout -b master-pluto
    ```
 4. **Fai le modifiche** e committale:  
    ```bash
    git add .
-   git commit -m "Fix gestione input del player"
+   git commit -m "Commenta la commit con ciò che hai modificato"
    ```
 5. **Pusha il branch** sul tuo fork:  
    ```bash
-   git push origin nome-feature
+   git push origin master-tuo-nome
    ```
 6. Apri una **Pull Request (PR)** dal tuo branch al branch `main` del repository principale.  
 
