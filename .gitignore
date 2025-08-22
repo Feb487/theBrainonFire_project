@@ -7,6 +7,7 @@
 
 # Script
 make_appImage.sh
+appimagetool-x86_64.AppImage
 
 # File di compilazione
 *.o
