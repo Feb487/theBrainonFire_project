@@ -1,10 +1,6 @@
 
 #Brain on Fire - Git Ignore
 
-# File e cartelle di build
-/bin/
-/release/
-
 # Script
 make_appImage.sh
 appimagetool-x86_64.AppImage

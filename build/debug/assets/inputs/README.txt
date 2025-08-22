@@ -1,0 +1,2 @@
+Questi sono i tasti che vengono utilizzati durante il gioco, se vogliamo inserirli nelle regole per spiegare come muoversi o magari all'inizio dei minigame posti in alto a destra
+come su minecraft o insomma questi giochi che ti spiegano i tasti durante il gameplay.
