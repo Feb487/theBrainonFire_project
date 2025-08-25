@@ -5,14 +5,14 @@
 - 🎯 **Concentrazione**
 - 🔤 **Linguaggio**
 
-Il gioco è sviluppato in **C++** e utilizza la libreria **[SDL2](https://www.libsdl.org/)** per la gestione di grafica, audio e input.  
+Il gioco è sviluppato in **C++** e utilizza la libreria **[SDL2](https://www.libsdl.org/)** per la gestione di grafica, audio e input.
 
 ---
 
 ## 📌 Requisiti
 
-Per collaborare allo sviluppo, assicurati di avere:  
-- Un sistema **Linux** (Ubuntu, Fedora, Arch, ecc.)  
+Per collaborare allo sviluppo, assicurati di avere:
+- Un sistema **Linux** (Ubuntu, Fedora, Arch, ecc.)
 - **[SDL2](https://www.libsdl.org/)** installato.
 - Un compilatore **C++** (`cmake`)
 - **[Git](https://git-scm.com/)** installato.
@@ -21,13 +21,13 @@ Per collaborare allo sviluppo, assicurati di avere:
 
 ## 💾​ Cos'è SDL2?
 
-**[SDL2 (Simple DirectMedia Layer)](https://www.libsdl.org/)** è una libreria **multipiattaforma** scritta in C che fornisce un’interfaccia semplice per:  
-- 🎨 **Grafica 2D** → finestre, rendering e gestione degli sprite.  
-- 🎮 **Input** → tastiera, mouse, controller e gamepad.  
-- 🔊 **Audio** → effetti sonori e musica.  
-- ⏱️ **Timer e threading** → sincronizzazione e multitasking.  
+**[SDL2 (Simple DirectMedia Layer)](https://www.libsdl.org/)** è una libreria **multipiattaforma** scritta in C che fornisce un’interfaccia semplice per:
+- 🎨 **Grafica 2D** → finestre, rendering e gestione degli sprite.
+- 🎮 **Input** → tastiera, mouse, controller e gamepad.
+- 🔊 **Audio** → effetti sonori e musica.
+- ⏱️ **Timer e threading** → sincronizzazione e multitasking.
 
-SDL2 è utilizzata da molte aziende e progetti famosi (tra cui **Valve**, **id Software** e **Epic Games**) ed è uno strumento fondamentale per chi sviluppa videogiochi **indie** o applicazioni multimediali.  
+SDL2 è utilizzata da molte aziende e progetti famosi (tra cui **Valve**, **id Software** e **Epic Games**) ed è uno strumento fondamentale per chi sviluppa videogiochi **indie** o applicazioni multimediali.
 
 ---
 
@@ -84,10 +84,10 @@ sudo pacman -S cmake
 
 ## 🤝 Come Contribuire
 
-Vuoi aiutarci a migliorare **Brain on Fire**? Segui questi passaggi:  
+Vuoi aiutarci a migliorare **Brain on Fire**? Segui questi passaggi:
 
-1. **Forka** il repository su GitHub.  
-2. **Clona** il tuo fork in locale:  
+1. **Forka** il repository su GitHub.
+2. **Clona** il tuo fork in locale:
    HTTPS:
    ```bash
    git clone https://github.com/Feb487/theBrainonFire_project.git
@@ -100,47 +100,75 @@ Vuoi aiutarci a migliorare **Brain on Fire**? Segui questi passaggi:
    ```bash
    cd theBrainonFire_project
    ```
-4. **Crea** un branch dedicato per la tua modifica (non lavorare mai direttamente su `main`):  
+4. **Crea** un branch dedicato per la tua modifica (non lavorare mai direttamente su `main`):
    ```bash
    git checkout -b feature-nome-feature
    ```
-   Esempio:  
+   Esempio:
    ```bash
    git checkout -b feature-fix-player
    ```
-5. **Effettua** le modifiche e committale:  
+5. **Effettua** le modifiche e committale:
    ```bash
    git add .
    git commit -m "Commenta la commit con ciò che hai modificato"
    ```
-6. **Pusha** il branch sul tuo fork:  
+6. **Pusha** il branch sul tuo fork:
    ```bash
    git push origin feature-nome-feature
    ```
-7. **Apri** una **Pull Request (PR)** dal tuo branch al branch `main` del repository principale.  
+7. **Apri** una **Pull Request (PR)** dal tuo branch al branch `main` del repository principale.
 8. Una volta accettata la **Pull Request (PR)** potrai eliminare il branch utilizzato:
    ```bash
    git branch -d feature-nome-feature
    ```
 ---
 
-## 🎮 Come eseguire il Gioco
+## 🎮 Come eseguire il Gioco (in debug)
 
-Vuoi giocare a **Brain on Fire**? Segui questi passaggi:
+Vuoi giocare a **Brain on Fire** in modalità debug? Segui questi passaggi:
 
 1. **Spostati** nella cartella debug:
    ```bash
-   cd build/release
+   cd build/debug
    ```
-2. **Compila** utilizzando cmake:
+2. **Configura** il progetto (da fare 1 sola volta):
+   ```bash
+   #cmake ../.. -DCMAKE_BUILD_TYPE=Debug
+   ```
+3. **Compila** utilizzando cmake:
    ```bash
    #cmake --build . -j$(nproc)
    ```
-3. **Esegui** il file compilato:
+4. **Esegui** il file compilato:
    ```bash
    #cmake --build . --target run
    ```
-4. **Divertiti**!
+5. **Divertiti**!
+
+---
+
+## 🎮 Come eseguire il Gioco (in release)
+
+Vuoi giocare a **Brain on Fire** in modalità release? Segui questi passaggi:
+
+1. **Spostati** nella cartella release:
+   ```bash
+   cd build/release
+   ```
+2. **Configura** il progetto (da fare 1 sola volta):
+   ```bash
+   #cmake ../.. -DCMAKE_BUILD_TYPE=Release
+   ```
+3. **Compila** utilizzando cmake:
+   ```bash
+   #cmake --build . -j$(nproc)
+   ```
+4. **Esegui** il file compilato:
+   ```bash
+   #cmake --build . --target run
+   ```
+5. **Divertiti**!
 
 ---
 
