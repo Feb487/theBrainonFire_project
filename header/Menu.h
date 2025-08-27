@@ -27,7 +27,6 @@ public:
     Button *buttonOptions;
     SDL_Texture *backgrouds;
     SDL_Texture *logo;
-    SDL_Texture *backgroudsMenuGiochi;
     SDL_Rect Bsrect,Bdrect;
     SDL_Rect MGsrect,MGdrect;
     SDL_Rect Lsrect,Ldrect;

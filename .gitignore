@@ -1,9 +1,10 @@
+#Brain on Fire gitignore``
 
-#Brain on Fire - Git Ignore
+build/*
+!build/
 
-# Script
-make_appImage.sh
-appimagetool-x86_64.AppImage
+build/debug/*
+!build/debug/
 
 # File di compilazione
 *.o
@@ -15,3 +16,4 @@ appimagetool-x86_64.AppImage
 *~
 *.swp
 .DS_Store
+

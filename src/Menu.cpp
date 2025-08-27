@@ -86,11 +86,7 @@ Menu::~Menu(){
         SDL_DestroyTexture(logo);
         logo = nullptr; 
     }
-    if (backgroudsMenuGiochi) {
-        SDL_DestroyTexture(backgroudsMenuGiochi);
-        backgroudsMenuGiochi = nullptr; 
-    }
-
+    
     for (Button* button : buttons) {
         delete button; 
     }
