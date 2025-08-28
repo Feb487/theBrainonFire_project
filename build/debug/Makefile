@@ -262,6 +262,54 @@ src/GamePlayer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/theBrainOnFire.dir/build.make CMakeFiles/theBrainOnFire.dir/src/GamePlayer.cpp.s
 .PHONY : src/GamePlayer.cpp.s
 
+src/Map.o: src/Map.cpp.o
+.PHONY : src/Map.o
+
+# target to build an object file
+src/Map.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/theBrainOnFire.dir/build.make CMakeFiles/theBrainOnFire.dir/src/Map.cpp.o
+.PHONY : src/Map.cpp.o
+
+src/Map.i: src/Map.cpp.i
+.PHONY : src/Map.i
+
+# target to preprocess a source file
+src/Map.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/theBrainOnFire.dir/build.make CMakeFiles/theBrainOnFire.dir/src/Map.cpp.i
+.PHONY : src/Map.cpp.i
+
+src/Map.s: src/Map.cpp.s
+.PHONY : src/Map.s
+
+# target to generate assembly for a file
+src/Map.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/theBrainOnFire.dir/build.make CMakeFiles/theBrainOnFire.dir/src/Map.cpp.s
+.PHONY : src/Map.cpp.s
+
+src/Memoria.o: src/Memoria.cpp.o
+.PHONY : src/Memoria.o
+
+# target to build an object file
+src/Memoria.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/theBrainOnFire.dir/build.make CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.o
+.PHONY : src/Memoria.cpp.o
+
+src/Memoria.i: src/Memoria.cpp.i
+.PHONY : src/Memoria.i
+
+# target to preprocess a source file
+src/Memoria.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/theBrainOnFire.dir/build.make CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.i
+.PHONY : src/Memoria.cpp.i
+
+src/Memoria.s: src/Memoria.cpp.s
+.PHONY : src/Memoria.s
+
+# target to generate assembly for a file
+src/Memoria.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/theBrainOnFire.dir/build.make CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.s
+.PHONY : src/Memoria.cpp.s
+
 src/Menu.o: src/Menu.cpp.o
 .PHONY : src/Menu.o
 
@@ -407,6 +455,12 @@ help:
 	@echo "... src/GamePlayer.o"
 	@echo "... src/GamePlayer.i"
 	@echo "... src/GamePlayer.s"
+	@echo "... src/Map.o"
+	@echo "... src/Map.i"
+	@echo "... src/Map.s"
+	@echo "... src/Memoria.o"
+	@echo "... src/Memoria.i"
+	@echo "... src/Memoria.s"
 	@echo "... src/Menu.o"
 	@echo "... src/Menu.i"
 	@echo "... src/Menu.s"

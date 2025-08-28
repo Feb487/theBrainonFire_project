@@ -98,6 +98,10 @@ void GamePlayer::draw(){
     SDL_RenderCopy(Game::m_renderer,currentAnimation,&srcRect,&destRect);
 }
 
+void GamePlayer::drawDeath(){
+    SDL_RenderCopy(Game::m_renderer,animationDeath,&srcRect,&destRect);
+}
+
 int GamePlayer::getXpos() {
     return xpos;
 }

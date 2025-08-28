@@ -331,6 +331,13 @@ CMakeFiles/theBrainOnFire.dir/src/Menu.cpp.o: \
  /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/../header/RuleMenu.h \
  /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/../header/Menu.h \
  /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/../header/GameMenu.h \
+ /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/../header/Memoria.h \
+ /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/../header/GamePlayer.h \
+ /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/../header/TextureManager.h \
+ /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/../header/Game.h \
+ /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/../header/Map.h \
+ /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/../header/Cube.h \
+ /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/../header/Mouse.h \
  /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h \

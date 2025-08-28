@@ -2,6 +2,7 @@
 #define GAMEMENU_H
 
 #include "Menu.h"
+#include "Memoria.h"
 
 class GameMenu : public GameState{
 public:
