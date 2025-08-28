@@ -22,6 +22,7 @@ public:
     void handleEvents(SDL_Event& event);
     void update();
     void draw();
+    void drawDeath();
 
     
 private:

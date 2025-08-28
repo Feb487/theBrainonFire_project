@@ -1,6 +1,5 @@
 #include "../header/GameMenu.h"
 
-
 GameMenu::GameMenu(Game* game){
 
     backgroundGameMenu = TextureManager::LoadTexture(".//assets//Backgrounds//bg_12.png");
@@ -45,6 +44,9 @@ void GameMenu::handleEvents(Game* game, Mouse* mouse){
         if (event.button.button == SDL_BUTTON_LEFT) {
             if (buttonMemoria->getIsSelected()) {
                 std::cout << "memoria cliccato" << std::endl;
+                GameState* memoria = new Memoria(game);
+                game->changeState(memoria);
+                return;
             } else if (buttonConcentrazione->getIsSelected()) {
                 std::cout << "concentrazione cliccato" << std::endl;
             } else if (buttonLinguaggio->getIsSelected()) {

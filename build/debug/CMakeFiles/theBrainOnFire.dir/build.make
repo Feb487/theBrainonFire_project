@@ -139,10 +139,38 @@ CMakeFiles/theBrainOnFire.dir/src/GamePlayer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/theBrainOnFire.dir/src/GamePlayer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/GamePlayer.cpp -o CMakeFiles/theBrainOnFire.dir/src/GamePlayer.cpp.s
 
+CMakeFiles/theBrainOnFire.dir/src/Map.cpp.o: CMakeFiles/theBrainOnFire.dir/flags.make
+CMakeFiles/theBrainOnFire.dir/src/Map.cpp.o: /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/Map.cpp
+CMakeFiles/theBrainOnFire.dir/src/Map.cpp.o: CMakeFiles/theBrainOnFire.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/theBrainOnFire.dir/src/Map.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/theBrainOnFire.dir/src/Map.cpp.o -MF CMakeFiles/theBrainOnFire.dir/src/Map.cpp.o.d -o CMakeFiles/theBrainOnFire.dir/src/Map.cpp.o -c /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/Map.cpp
+
+CMakeFiles/theBrainOnFire.dir/src/Map.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/theBrainOnFire.dir/src/Map.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/Map.cpp > CMakeFiles/theBrainOnFire.dir/src/Map.cpp.i
+
+CMakeFiles/theBrainOnFire.dir/src/Map.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/theBrainOnFire.dir/src/Map.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/Map.cpp -o CMakeFiles/theBrainOnFire.dir/src/Map.cpp.s
+
+CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.o: CMakeFiles/theBrainOnFire.dir/flags.make
+CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.o: /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/Memoria.cpp
+CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.o: CMakeFiles/theBrainOnFire.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.o -MF CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.o.d -o CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.o -c /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/Memoria.cpp
+
+CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/Memoria.cpp > CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.i
+
+CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/Memoria.cpp -o CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.s
+
 CMakeFiles/theBrainOnFire.dir/src/Menu.cpp.o: CMakeFiles/theBrainOnFire.dir/flags.make
 CMakeFiles/theBrainOnFire.dir/src/Menu.cpp.o: /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/Menu.cpp
 CMakeFiles/theBrainOnFire.dir/src/Menu.cpp.o: CMakeFiles/theBrainOnFire.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/theBrainOnFire.dir/src/Menu.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/theBrainOnFire.dir/src/Menu.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/theBrainOnFire.dir/src/Menu.cpp.o -MF CMakeFiles/theBrainOnFire.dir/src/Menu.cpp.o.d -o CMakeFiles/theBrainOnFire.dir/src/Menu.cpp.o -c /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/Menu.cpp
 
 CMakeFiles/theBrainOnFire.dir/src/Menu.cpp.i: cmake_force
@@ -156,7 +184,7 @@ CMakeFiles/theBrainOnFire.dir/src/Menu.cpp.s: cmake_force
 CMakeFiles/theBrainOnFire.dir/src/Mouse.cpp.o: CMakeFiles/theBrainOnFire.dir/flags.make
 CMakeFiles/theBrainOnFire.dir/src/Mouse.cpp.o: /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/Mouse.cpp
 CMakeFiles/theBrainOnFire.dir/src/Mouse.cpp.o: CMakeFiles/theBrainOnFire.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/theBrainOnFire.dir/src/Mouse.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/theBrainOnFire.dir/src/Mouse.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/theBrainOnFire.dir/src/Mouse.cpp.o -MF CMakeFiles/theBrainOnFire.dir/src/Mouse.cpp.o.d -o CMakeFiles/theBrainOnFire.dir/src/Mouse.cpp.o -c /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/Mouse.cpp
 
 CMakeFiles/theBrainOnFire.dir/src/Mouse.cpp.i: cmake_force
@@ -170,7 +198,7 @@ CMakeFiles/theBrainOnFire.dir/src/Mouse.cpp.s: cmake_force
 CMakeFiles/theBrainOnFire.dir/src/RuleMenu.cpp.o: CMakeFiles/theBrainOnFire.dir/flags.make
 CMakeFiles/theBrainOnFire.dir/src/RuleMenu.cpp.o: /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/RuleMenu.cpp
 CMakeFiles/theBrainOnFire.dir/src/RuleMenu.cpp.o: CMakeFiles/theBrainOnFire.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/theBrainOnFire.dir/src/RuleMenu.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/theBrainOnFire.dir/src/RuleMenu.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/theBrainOnFire.dir/src/RuleMenu.cpp.o -MF CMakeFiles/theBrainOnFire.dir/src/RuleMenu.cpp.o.d -o CMakeFiles/theBrainOnFire.dir/src/RuleMenu.cpp.o -c /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/RuleMenu.cpp
 
 CMakeFiles/theBrainOnFire.dir/src/RuleMenu.cpp.i: cmake_force
@@ -184,7 +212,7 @@ CMakeFiles/theBrainOnFire.dir/src/RuleMenu.cpp.s: cmake_force
 CMakeFiles/theBrainOnFire.dir/src/Sound.cpp.o: CMakeFiles/theBrainOnFire.dir/flags.make
 CMakeFiles/theBrainOnFire.dir/src/Sound.cpp.o: /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/Sound.cpp
 CMakeFiles/theBrainOnFire.dir/src/Sound.cpp.o: CMakeFiles/theBrainOnFire.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/theBrainOnFire.dir/src/Sound.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/theBrainOnFire.dir/src/Sound.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/theBrainOnFire.dir/src/Sound.cpp.o -MF CMakeFiles/theBrainOnFire.dir/src/Sound.cpp.o.d -o CMakeFiles/theBrainOnFire.dir/src/Sound.cpp.o -c /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/Sound.cpp
 
 CMakeFiles/theBrainOnFire.dir/src/Sound.cpp.i: cmake_force
@@ -198,7 +226,7 @@ CMakeFiles/theBrainOnFire.dir/src/Sound.cpp.s: cmake_force
 CMakeFiles/theBrainOnFire.dir/src/TextureManager.cpp.o: CMakeFiles/theBrainOnFire.dir/flags.make
 CMakeFiles/theBrainOnFire.dir/src/TextureManager.cpp.o: /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/TextureManager.cpp
 CMakeFiles/theBrainOnFire.dir/src/TextureManager.cpp.o: CMakeFiles/theBrainOnFire.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/theBrainOnFire.dir/src/TextureManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/theBrainOnFire.dir/src/TextureManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/theBrainOnFire.dir/src/TextureManager.cpp.o -MF CMakeFiles/theBrainOnFire.dir/src/TextureManager.cpp.o.d -o CMakeFiles/theBrainOnFire.dir/src/TextureManager.cpp.o -c /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/src/TextureManager.cpp
 
 CMakeFiles/theBrainOnFire.dir/src/TextureManager.cpp.i: cmake_force
@@ -216,6 +244,8 @@ theBrainOnFire_OBJECTS = \
 "CMakeFiles/theBrainOnFire.dir/src/Game.cpp.o" \
 "CMakeFiles/theBrainOnFire.dir/src/GameMenu.cpp.o" \
 "CMakeFiles/theBrainOnFire.dir/src/GamePlayer.cpp.o" \
+"CMakeFiles/theBrainOnFire.dir/src/Map.cpp.o" \
+"CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.o" \
 "CMakeFiles/theBrainOnFire.dir/src/Menu.cpp.o" \
 "CMakeFiles/theBrainOnFire.dir/src/Mouse.cpp.o" \
 "CMakeFiles/theBrainOnFire.dir/src/RuleMenu.cpp.o" \
@@ -230,6 +260,8 @@ theBrainOnFire: CMakeFiles/theBrainOnFire.dir/src/Button.cpp.o
 theBrainOnFire: CMakeFiles/theBrainOnFire.dir/src/Game.cpp.o
 theBrainOnFire: CMakeFiles/theBrainOnFire.dir/src/GameMenu.cpp.o
 theBrainOnFire: CMakeFiles/theBrainOnFire.dir/src/GamePlayer.cpp.o
+theBrainOnFire: CMakeFiles/theBrainOnFire.dir/src/Map.cpp.o
+theBrainOnFire: CMakeFiles/theBrainOnFire.dir/src/Memoria.cpp.o
 theBrainOnFire: CMakeFiles/theBrainOnFire.dir/src/Menu.cpp.o
 theBrainOnFire: CMakeFiles/theBrainOnFire.dir/src/Mouse.cpp.o
 theBrainOnFire: CMakeFiles/theBrainOnFire.dir/src/RuleMenu.cpp.o
@@ -237,7 +269,7 @@ theBrainOnFire: CMakeFiles/theBrainOnFire.dir/src/Sound.cpp.o
 theBrainOnFire: CMakeFiles/theBrainOnFire.dir/src/TextureManager.cpp.o
 theBrainOnFire: CMakeFiles/theBrainOnFire.dir/build.make
 theBrainOnFire: CMakeFiles/theBrainOnFire.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable theBrainOnFire"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable theBrainOnFire"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/theBrainOnFire.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/cmake -E copy_directory /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/assets /home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/debug/assets
 

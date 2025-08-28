@@ -25,6 +25,14 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 
+# Abilita flag extra in Debug
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    message(STATUS "Compilazione in Debug con AddressSanitizer e UBsan")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address,undefined -fno-omit-frame-pointer -g -O0")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fsanitize=address,undefined")
+endif()
+
+
 # Dipendenze con pkg-config
  
 find_package(PkgConfig REQUIRED)
