@@ -1,6 +1,7 @@
 #Istruzione build debug e release BrainOnFire
 #
 # Build Release (include AppImage)
+#mkdir -p build/release
 #cd build/release
 #cmake ../.. -DCMAKE_BUILD_TYPE=Release
 #cmake --build . -j$(nproc)
@@ -8,6 +9,7 @@
 #cmake --build . --target appimage
 
 # Build Debug (senza AppImage)
+#mkdir -p build/debug
 #cd build/debug
 #cmake ../.. -DCMAKE_BUILD_TYPE=Debug
 #cmake --build . -j$(nproc)

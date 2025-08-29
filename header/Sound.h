@@ -7,6 +7,7 @@ class Sound
 {
     public:
         Sound();
+        virtual ~Sound();
         void playClick();
         void playOstMenu();
         void stopOstMenu();

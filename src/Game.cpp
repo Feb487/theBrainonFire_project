@@ -16,13 +16,17 @@ Game::Game() {
     ffscreen = 0;
     isRunning = true;
     m_window = nullptr;
+    soundGame = nullptr;
+    currentState = nullptr;
 }
 Game::~Game() {
+    delete currentState;
+    delete mouse;
+    delete soundGame;
     SDL_DestroyWindow(m_window);
     SDL_DestroyRenderer(m_renderer);
-    SDL_Quit();
-    delete currentState;
-    std::cout << "Game Cleaned"<<std::endl;
+    Mix_CloseAudio();
+    SDL_Quit();    
 }
 
 void Game::setRunning(bool state){

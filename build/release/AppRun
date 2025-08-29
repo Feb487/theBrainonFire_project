@@ -1,4 +1,0 @@
-#!/bin/bash
-HERE="$(dirname "$(readlink -f "$0")")"
-cd "$HERE/usr"
-exec "$HERE/usr/bin/theBrainOnFire" "$@"

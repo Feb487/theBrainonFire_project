@@ -823,6 +823,10 @@ Map::~Map() {
     SDL_DestroyTexture(forest16_ground);
     SDL_DestroyTexture(forest17_ground);
     SDL_DestroyTexture(forest18_ground);
-
+    
+    if (blocco != nullptr) {
+        delete[] blocco;
+        blocco = nullptr;
+    }
 }
 

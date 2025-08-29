@@ -1,10 +1,6 @@
-#Brain on Fire gitignore``
+#Brain on Fire gitignore
 
-build/*
-!build/
-
-build/debug/*
-!build/debug/
+build/
 
 # File di compilazione
 *.o

@@ -1,1 +1,0 @@
-Ho provato a fare l'animazione del logo ma è stato abbastanza difficile, fammi sapere se va bene e se non lagga o cose del genere.

@@ -1,6 +1,0 @@
-/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/release/CMakeFiles/theBrainOnFire.dir
-/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/release/CMakeFiles/run.dir
-/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/release/CMakeFiles/appdir.dir
-/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/release/CMakeFiles/appimage.dir
-/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/release/CMakeFiles/edit_cache.dir
-/home/giancarlo/Scrivania/OpenSourceProject/TheBrainOnFire/build/release/CMakeFiles/rebuild_cache.dir

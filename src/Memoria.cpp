@@ -60,20 +60,31 @@ Memoria::Memoria(Game* game){
 }
 
 Memoria::~Memoria() {
-    delete player;
-
     for (Button* button : buttons) {
         delete button;
     }
     buttons.clear(); 
+
     if (bandiera) {
         SDL_DestroyTexture(bandiera);
         bandiera = nullptr; 
     }
+    if (texVictory) {
+        SDL_DestroyTexture(texVictory);
+        texVictory = nullptr;
+    }
+    if (texLose) {
+        SDL_DestroyTexture(texLose);
+        texLose = nullptr;
+    }
+   
+
+    delete player;
+    player = nullptr;
 
     delete mappa;
+    mappa = nullptr;
 }
-
 void Memoria::handleEvents(Game* game, Mouse* mouse){
  
     SDL_Event event;
