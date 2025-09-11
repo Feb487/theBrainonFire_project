@@ -3,7 +3,7 @@
 
 #include "Game.h"
 #include "Cube.h"
-
+#include <vector>
 
 
 class Map{
@@ -15,6 +15,7 @@ public:
     void LoadMap();
     void DrawMap();
     void numSafeBlock();
+    void buildSafeBlock();
     void numLv();
     void incrementaLivelloCorrente();
     void decrementeLivelloCorrente();
@@ -29,7 +30,7 @@ private:
     static const int colonne = 38;
     static const int numLivelli = 4;
     
-    Blocchi *blocco;
+    std::vector<Blocchi> blocco;
     Livelli livello;
 
     int mapp[righe][colonne];

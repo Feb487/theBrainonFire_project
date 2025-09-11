@@ -1,4 +1,5 @@
 #include "../header/Memoria.h"
+#include "../header/GameMenu.h"
 
 Memoria::Memoria(Game* game){
 
@@ -49,14 +50,14 @@ Memoria::Memoria(Game* game){
                                     ".//assets//Sprite//Cammina_avanti.png",
                                     ".//assets//Sprite//RunD.png",
                                     ".//assets//Sprite//Dead.png",100,100);
-    setPlayerPos(10,310);
+    setPlayerPos(startPXpos,startPYpos);
 
     texVictory = TextureManager::LoadTexture("assets//icons//winlose//haivinto_animation.png");
     texLose = TextureManager::LoadTexture("assets//icons//winlose//haiperso_animation.png");
 
     win = false;
     isAlive = true;
-    fChange = false;
+    fChange = true;
 }
 
 Memoria::~Memoria() {
@@ -94,16 +95,36 @@ void Memoria::handleEvents(Game* game, Mouse* mouse){
     } else if (event.type == SDL_MOUSEBUTTONUP) {
         if (event.button.button == SDL_BUTTON_LEFT) {
             if (backGame->getIsSelected()) {
-                std::cout << "Pulsante Play cliccato!" << std::endl;
+                isAlive = true;
+                fChange = true;
+                setPlayerPos(10,310);
+                switch(mappa->getLivello()){
+                   case 0:
+                        std::cout << "sei un idiota" << std::endl;
+                        setPlayerPos(startPXpos,startPYpos);
+                        break;
+                   case 1:
+                        setPlayerPos(startPXpos,startPYpos);
+                        mappa->decrementeLivelloCorrente();
+                        mappa->LoadMap();
+                        win = false;
+                       break;
+                   default:
+                    break;
+                }
                 return;
             } else if (backHome->getIsSelected()) {
-                std::cout << "Pulsante Rule cliccato!" << std::endl;
+                game->changeState(new GameMenu(game));
                 return;
             } else if (nextLevel->getIsSelected()) {
-                std::cout << "Pulsante Exit cliccato, fine gioco..." << std::endl;
+                    mappa->incrementaLivelloCorrente();
+                    mappa->LoadMap();
+                    mappa->numSafeBlock();
+                    mappa->setSafeBlock();
+                    setPlayerPos(startPXpos,startPYpos);
                 game->setRunning(false);
             } else {
-                std::cout << "Pulsante Option cliccato!" << std::endl;
+                std::cout << "Nothing do to..." << std::endl;
             }
         }
     } else {
@@ -119,22 +140,24 @@ void Memoria::handleEvents(Game* game, Mouse* mouse){
 }
 void Memoria::update(){
     player->update();
-
+    updateFlag();
     isAlive = mappa->checkBlock(player->getXpos(),player->getYpos());
-    if(player->getXpos() > lineInsivibile ){
-            if (fChange){
-                    mappa->incrementaLivelloCorrente();
-                    mappa->LoadMap();
-                    fChange = false;
-                }
-            if (player->getXpos() >= 1100){ win =  true;}
+    if(player->getXpos() > invisibleLine){
+        if (fChange){
+                mappa->incrementaLivelloCorrente();
+                mappa->LoadMap();
+                fChange = false;
+            }
+        if (player->getXpos() >= winPos){ win =  true;}
     }
 };
 void Memoria::draw(){
     mappa->DrawMap();
+    backGame->draw();
+    backHome->draw();
+
+    if (mappa->getLivello() % 2 == 1){ TextureManager::Draw(bandiera,srectBAN,drectBAN);}
     if (isAlive){
-        backGame->draw();
-        backHome->draw();
         player->draw();
         if(win){
             drawVictory();
@@ -160,4 +183,19 @@ void Memoria::drawVictory(){
 
 void Memoria::drawLose(){
     TextureManager::Draw(texLose,srectWL,drectWL);
+}
+
+void Memoria::updateFlag(){
+    int const totalFrames = 8;
+    int const rFrame = 8;
+    int currentFrame = 0;
+    int cFrame = 0;
+
+    cFrame++;
+        if(cFrame >= rFrame){
+            cFrame = 0;
+            currentFrame = (currentFrame + 1) % totalFrames;
+        }
+
+    srectBAN = {currentFrame * 60, 0, 60, 60};
 }

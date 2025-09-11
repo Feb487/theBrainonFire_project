@@ -24,7 +24,11 @@ private:
     Button* nextLevel;
     std::vector<Button*> buttons;
 
-    const int lineInsivibile = 40;
+    const int invisibleLine = 40;
+    const int startPYpos = 310;
+    const int startPXpos = 10;
+    const int winPos = 1100;
+
     bool win;
     bool isAlive;
     bool fChange;
@@ -45,6 +49,7 @@ private:
     SDL_Rect srectWL,drectWL;
     
     void setPlayerPos(int xpos,int ypos);
+    void updateFlag();
 
 };
 

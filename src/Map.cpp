@@ -38,13 +38,9 @@ void Map::numSafeBlock(){
         }
     }
 
-    // Dealloca la memoria se è già stata allocata in precedenza
-    if (blocco != nullptr) {
-        delete[] blocco;
-    }
-
-     blocco = new Blocchi[num_safe_block];
-     std::cout << "funziona numSafeBlock : " << num_safe_block << std::endl;
+    blocco.clear();
+    blocco.reserve(num_safe_block); // ottimizza le allocazioni 
+    std::cout << "funziona numSafeBlock : " << num_safe_block << std::endl;
 
 }
 
@@ -58,13 +54,49 @@ void Map::setSafeBlock(){
                     blocco[k].mX = blocco[k].sX + 32;
                     blocco[k].sY = i*32;
                     blocco[k].mY = blocco[k].sY + 32;
-                    std::cout << "BLOCCO " << k << " sX : " << blocco[k].sX << " mX : " << blocco[k].mX << " | " << " sY : " << blocco[k].sY << " mY : " << blocco[k].mY << std::endl;
-                      k++;
+                    //std::cout << "BLOCCO " << k << " sX : " << blocco[k].sX << " mX : " << blocco[k].mX << " | " << " sY : " << blocco[k].sY << " mY : " << blocco[k].mY << std::endl;
+                    k++;
                 }
             }
     }
 
     std::cout << "funziona setSafeBlock" << std::endl;
+    k=0;
+}
+
+void Map::buildSafeBlock(){
+    num_safe_block = 0;
+    int k=0;
+
+    for(int i=0 ; i<righe;i++){
+        for(int j=0; j<colonne; j++){
+            if (livelli[livello_corrente][i][j] >= 7 && livelli[livello_corrente][i][j] <=12){
+                num_safe_block++;
+            }
+        }
+    }
+
+    blocco.clear();
+    blocco.reserve(num_safe_block); // ottimizza le allocazioni 
+    std::cout << "numSafeBlock : " << num_safe_block << std::endl;
+
+    for (int i=0; i< righe; i++){
+            for (int j=0; j<colonne;j++){
+                if (livelli[livello_corrente][i][j] >= 7 && livelli[livello_corrente][i][j] <=12 ){
+                    blocco[k].sX = j*32;
+                    blocco[k].mX = blocco[k].sX + 32;
+                    blocco[k].sY = i*32;
+                    blocco[k].mY = blocco[k].sY + 32;
+                    //std::cout << "BLOCCO " << k << " sX : " << blocco[k].sX << " mX : " << blocco[k].mX << " | " << " sY : " << blocco[k].sY << " mY : " << blocco[k].mY << std::endl;
+                    k++;
+                }
+            }
+    }
+    
+    k=0;
+    std::cout << "funziona setSafeBlock" << std::endl;
+
+
 }
 
 bool Map::checkBlock(int Xpos, int Ypos){
@@ -265,13 +297,10 @@ Map::Map(){
 
 
     livello_corrente = 0;
-    blocco = nullptr;
 
     numLv();
     LoadMap();
-    numSafeBlock();
-    setSafeBlock();
-
+    buildSafeBlock();
     src.x  = 0;
     src.y = 0;
     src.w = 32;
@@ -824,9 +853,6 @@ Map::~Map() {
     SDL_DestroyTexture(forest17_ground);
     SDL_DestroyTexture(forest18_ground);
     
-    if (blocco != nullptr) {
-        delete[] blocco;
-        blocco = nullptr;
-    }
+    blocco.clear();
 }
 

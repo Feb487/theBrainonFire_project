@@ -50,20 +50,15 @@ void Menu::handleEvents(Game* game, Mouse *mouse) {
     } else if (event.type == SDL_MOUSEBUTTONUP) {
         if (event.button.button == SDL_BUTTON_LEFT) {
             if (buttonPlay->getIsSelected()) {
-                std::cout << "Pulsante Play cliccato!" << std::endl;
-                GameState* gamemenu = new GameMenu(game);
-                game->changeState(gamemenu);
+                game->changeState(new GameMenu(game));
                 return;
             } else if (buttonRule->getIsSelected()) {
-                std::cout << "Pulsante Rule cliccato!" << std::endl;
-                GameState* rulemenu = new RuleMenu(game);
-                game->changeState(rulemenu);
+                game->changeState(new RuleMenu(game));
                 return;
             } else if (buttonExit->getIsSelected()) {
-                std::cout << "Pulsante Exit cliccato, fine gioco..." << std::endl;
                 game->setRunning(false);
             } else {
-                std::cout << "Pulsante Option cliccato!" << std::endl;
+                std::cout << "Nothing to do..." << std::endl;
             }
         }
     } else {

@@ -44,16 +44,15 @@ void GameMenu::handleEvents(Game* game, Mouse* mouse){
         if (event.button.button == SDL_BUTTON_LEFT) {
             if (buttonMemoria->getIsSelected()) {
                 std::cout << "memoria cliccato" << std::endl;
-                GameState* memoria = new Memoria(game);
-                game->changeState(memoria);
+                game->soundGame->stopOstMenu();
+                game->changeState(new Memoria(game));
                 return;
             } else if (buttonConcentrazione->getIsSelected()) {
                 std::cout << "concentrazione cliccato" << std::endl;
             } else if (buttonLinguaggio->getIsSelected()) {
                 std::cout << "linguaggio cliccato" << std::endl;
             } else if (buttonBack->getIsSelected()){
-                GameState* menu = new Menu(game);
-                game->changeState(menu);
+                game->changeState(new Menu(game));
                 return;
             }else{
                 std::cout << "Nessun bottone selezionato" << std::endl;

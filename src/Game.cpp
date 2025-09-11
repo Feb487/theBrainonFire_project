@@ -23,11 +23,20 @@ Game::~Game() {
     delete currentState;
     delete mouse;
     delete soundGame;
-    SDL_DestroyWindow(m_window);
-    SDL_DestroyRenderer(m_renderer);
+
+    if (m_renderer) {
+        SDL_DestroyRenderer(m_renderer);
+        m_renderer = nullptr;
+    }
+    if (m_window) {
+        SDL_DestroyWindow(m_window);
+        m_window = nullptr;
+    }
+
     Mix_CloseAudio();
-    SDL_Quit();    
+    SDL_Quit();
 }
+
 
 void Game::setRunning(bool state){
     isRunning = state; 
