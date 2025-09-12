@@ -23,12 +23,15 @@ public:
     void update();
     void draw();
     void drawDeath();
+    bool getAlive();
+    void setAlive(bool isAlive);
 
     
 private:
 
     int xpos;
     int ypos;
+    bool isAlive;
 
     enum Direzione {
         UP,

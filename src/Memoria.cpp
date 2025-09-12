@@ -56,8 +56,10 @@ Memoria::Memoria(Game* game){
     texLose = TextureManager::LoadTexture("assets//icons//winlose//haiperso_animation.png");
 
     win = false;
-    isAlive = true;
     fChange = true;
+
+    cFrame = 0;
+    currentFrame = 0;
 }
 
 Memoria::~Memoria() {
@@ -95,7 +97,7 @@ void Memoria::handleEvents(Game* game, Mouse* mouse){
     } else if (event.type == SDL_MOUSEBUTTONUP) {
         if (event.button.button == SDL_BUTTON_LEFT) {
             if (backGame->getIsSelected()) {
-                isAlive = true;
+                player->setAlive(true);
                 fChange = true;
                 setPlayerPos(10,310);
                 switch(mappa->getLivello()){
@@ -117,12 +119,13 @@ void Memoria::handleEvents(Game* game, Mouse* mouse){
                 game->changeState(new GameMenu(game));
                 return;
             } else if (nextLevel->getIsSelected()) {
+                    setPlayerPos(startPXpos,startPYpos);
                     mappa->incrementaLivelloCorrente();
                     mappa->LoadMap();
                     mappa->numSafeBlock();
                     mappa->setSafeBlock();
-                    setPlayerPos(startPXpos,startPYpos);
-                game->setRunning(false);
+                    win = false;
+                    fChange = true;
             } else {
                 std::cout << "Nothing do to..." << std::endl;
             }
@@ -132,7 +135,6 @@ void Memoria::handleEvents(Game* game, Mouse* mouse){
         backHome->setIsSelected(false);
         nextLevel->setIsSelected(false);
     }
-
     player->handleEvents(event);
    }
 
@@ -141,7 +143,8 @@ void Memoria::handleEvents(Game* game, Mouse* mouse){
 void Memoria::update(){
     player->update();
     updateFlag();
-    isAlive = mappa->checkBlock(player->getXpos(),player->getYpos());
+    player->setAlive(mappa->checkBlock(player->getXpos(),player->getYpos()));
+
     if(player->getXpos() > invisibleLine){
         if (fChange){
                 mappa->incrementaLivelloCorrente();
@@ -157,7 +160,7 @@ void Memoria::draw(){
     backHome->draw();
 
     if (mappa->getLivello() % 2 == 1){ TextureManager::Draw(bandiera,srectBAN,drectBAN);}
-    if (isAlive){
+    if (player->getAlive()){
         player->draw();
         if(win){
             drawVictory();
@@ -186,11 +189,6 @@ void Memoria::drawLose(){
 }
 
 void Memoria::updateFlag(){
-    int const totalFrames = 8;
-    int const rFrame = 8;
-    int currentFrame = 0;
-    int cFrame = 0;
-
     cFrame++;
         if(cFrame >= rFrame){
             cFrame = 0;

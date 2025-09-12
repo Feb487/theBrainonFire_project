@@ -37,7 +37,7 @@ void GamePlayer::init(const char* texturesheetD,const char* texturesheetA,
 
     xpos = x;
     ypos = y;
-
+    isAlive = true;
 
     srcRect.x = 0;
     srcRect.y = 0;
@@ -53,33 +53,35 @@ void GamePlayer::init(const char* texturesheetD,const char* texturesheetA,
 }
 
 void GamePlayer::handleEvents(SDL_Event& event){
+        if (isAlive){
+            if (event.type == SDL_KEYDOWN) {
+                switch (event.key.keysym.sym) {
+                    case SDLK_w:
+                        setW();
+                        break;
 
-    if (event.type == SDL_KEYDOWN) {
-        switch (event.key.keysym.sym) {
-            case SDLK_w:
-                setW();
-                break;
+                    case SDLK_a:
+                        setA();
+                        break;
 
-            case SDLK_a:
-                setA();
-                break;
+                    case SDLK_s:
+                        setS();
+                        break;
 
-            case SDLK_s:
-                setS();
-                break;
+                    case SDLK_d:
+                        setD();
+                        break;
 
-            case SDLK_d:
-                setD();
-                break;
-
-            default:
+                    default:
+                        setDefault();
+                        break;
+                }
+            }
+            else if (event.type == SDL_KEYUP) {
                 setDefault();
-                break;
+            }
         }
-    }
-    else if (event.type == SDL_KEYUP) {
-        setDefault();
-    } 
+    
    }
 
 void GamePlayer::update(){
@@ -165,5 +167,13 @@ void GamePlayer::setD(){
         xpos = xpos + SPEED;
     }
 
+}
+
+bool GamePlayer::getAlive(){
+    return isAlive; 
+}
+
+void GamePlayer::setAlive(bool isAlive){
+    this->isAlive = isAlive;
 }
 

@@ -30,11 +30,16 @@ private:
     const int winPos = 1100;
 
     bool win;
-    bool isAlive;
     bool fChange;
 
     SDL_Texture* bandiera;
     SDL_Rect srectBAN,drectBAN;
+
+    int const totalFrames = 8;
+    int const rFrame = 8;
+    int currentFrame;
+    int cFrame;
+
     Map* mappa;
 
      //backgrund game over  & victory
